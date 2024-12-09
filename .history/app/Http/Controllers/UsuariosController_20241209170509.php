@@ -16,7 +16,7 @@ class UsuariosController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+$this->middleware('auth');
     }
 
     // public function PrimerUser()
@@ -166,10 +166,11 @@ class UsuariosController extends Controller
                     'name' => ['string', 'required', 'max:255'],
                     'rol' => ['required'],
                     'email' => ['required', 'email', 'unique:users'],
-                    'password' => ['required', 'string', 'min:3'],
+                    'password'=>['required','string', 'min:3'],
 
                 ]);
-            } else {
+
+            }else{
 
                 $datos = request()->validate([
 
@@ -178,20 +179,23 @@ class UsuariosController extends Controller
                     'email' => ['required', 'email', 'unique:users'],
 
                 ]);
-            }
-        } else {
 
-            if (request('password')) {
+            }
+
+        }else{
+
+                if (request('password')) {
 
                 $datos = request()->validate([
 
                     'name' => ['string', 'required', 'max:255'],
                     'rol' => ['required'],
                     'email' => ['required', 'email'],
-                    'password' => ['required', 'string', 'min:3'],
+                    'password'=>['required','string', 'min:3'],
 
                 ]);
-            } else {
+
+            }else{
 
                 $datos = request()->validate([
 
@@ -200,33 +204,37 @@ class UsuariosController extends Controller
                     'email' => ['required', 'email'],
 
                 ]);
+
             }
+
         }
 
-        if (request('password')) {
+         if(request('password')){
 
             $clave = request('password');
 
             User::where('id', $id_usuario)->update([
 
-                'name' => $datos["name"],
-                'rol' => $datos["rol"],
-                'email' => $datos["email"],
-                'password' => Hash::make($clave),
+                'name' =>$datos["name"],
+                'rol' =>$datos["rol"],
+                'email' =>$datos["email"],
+                'password' =>Hash::make($clave),
 
             ]);
-        } else {
+
+         }else{
 
             User::where('id', $id_usuario)->update([
 
-                'name' => $datos["name"],
-                'rol' => $datos["rol"],
-                'email' => $datos["email"],
+                'name' =>$datos["name"],
+                'rol' =>$datos["rol"],
+                'email' =>$datos["email"],
 
             ]);
-        }
+         }
 
-        return redirect('Usuarios');
+         return redirect('Usuarios');
+
     }
 
     /**
@@ -234,7 +242,7 @@ class UsuariosController extends Controller
      */
     public function destroy(string $id_usuario)
     {
-
+        
         User::destroy($id_usuario);
         return redirect('Usuarios');
     }
