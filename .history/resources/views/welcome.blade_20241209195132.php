@@ -115,7 +115,7 @@
     <script type="text/javascript">
         $(".table").DataTable({
 
-            @if($exp[3]=='Suscursales')
+            @if(exp[3]=='Suscursales')
 
             echo 'order: [[0,"asc"]],';
 

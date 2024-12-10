@@ -33,7 +33,7 @@
 
             <div class="box-body">
 
-                <table class="table table-bordered table-striped table-hover dt-responsice">
+                <table class="table table-bordered table-striped table-hover">
 
                     <thead>
 
@@ -43,32 +43,7 @@
 
                     </thead>
 
-                    <tbody>
-
-                        @foreach($sucursales as $sucursal)
-
-                        <tr>
-
-                            <td>
-
-                            <p style="display:none">
-                                {{ $sucursal->nombre}}
-                            </p>
-
-                                <form>
-
-                                    <input type="text" class="form-control" required name="nombre" value="{{ $sucursal->nombre }}">
-
-                                </form>
-
-                            </td>
-
-                        </tr>
-
-
-
-                        @endforeach
-                    </tbody>
+                    <tbody></tbody>
 
                 </table>
 

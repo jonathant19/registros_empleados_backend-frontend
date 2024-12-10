@@ -115,12 +115,12 @@
     <script type="text/javascript">
         $(".table").DataTable({
 
-            @if($exp[3]=='Suscursales')
+            @if(
 
-            echo 'order: [[0,"asc"]],';
 
-            @endif
-            
+
+        )
+            "ordering": false,
 
             "language": {
 

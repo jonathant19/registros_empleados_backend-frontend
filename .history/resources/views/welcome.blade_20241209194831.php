@@ -121,7 +121,8 @@
 
             @endif
             
-
+            @endphp
+            
             "language": {
 
                 "sSearch": "Buscar:",

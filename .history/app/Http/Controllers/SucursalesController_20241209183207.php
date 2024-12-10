@@ -16,7 +16,7 @@ class SucursalesController extends Controller
     {
         $sucursales = Sucursales::all();
 
-        return view('modulos.users.Sucursales', compact('sucursales'));
+        return view('modulos.users.Sucursales', compact());
     }
 
  

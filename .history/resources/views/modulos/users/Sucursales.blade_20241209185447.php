@@ -33,7 +33,7 @@
 
             <div class="box-body">
 
-                <table class="table table-bordered table-striped table-hover dt-responsice">
+                <table class="table table-bordered table-striped table-hover">
 
                     <thead>
 
@@ -50,10 +50,7 @@
                         <tr>
 
                             <td>
-
-                            <p style="display:none">
-                                {{ $sucursal->nombre}}
-                            </p>
+                                
 
                                 <form>
 

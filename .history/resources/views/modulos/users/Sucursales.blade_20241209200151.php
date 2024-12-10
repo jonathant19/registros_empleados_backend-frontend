@@ -51,7 +51,7 @@
 
                             <td>
 
-                            <p style="display:none">
+                            <p style="display: none">
                                 {{ $sucursal->nombre}}
                             </p>
 

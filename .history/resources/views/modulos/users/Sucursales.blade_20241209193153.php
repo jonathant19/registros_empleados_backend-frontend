@@ -5,80 +5,56 @@
 <div class="content-wrapper">
 
     <section class="content-header">
-
         <h1><i class="fa fa-building"></i> Gestor de Sucursales</h1>
         <br>
 
-        <div class="row">
+        <div class="row justify-content-center">
+            <form method="post">
+                @csrf
 
-            <form method="post"">
-           @csrf
+                <!-- Campo de nombre de la sucursal -->
+                <div class="col-md-3">
+                    <input type="text" class="form-control" name="nombre" required placeholder="Nombre de la Sucursal">
+                </div>
 
-           <div class=" col-md-4">
-                <input type="text" class="form-control" name="nombre" required placeholder="Nombre de la Sucursal">
-        </div>
-
-        <div class="col-md-4">
-            <button type="submit" class="btn btn-primary">Agregar</button>
-
+                <!-- Botón de agregar -->
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </div>
+                
             </form>
-
         </div>
-
+        
     </section>
 
     <section class="content">
-
         <div class="box">
-
             <div class="box-body">
-
-                <table class="table table-bordered table-striped table-hover dt-responsice">
-
+                <table class="table table-bordered table-striped table-hover">
                     <thead>
-
                         <tr>
                             <th>Sucursal</th>
                         </tr>
-
                     </thead>
-
                     <tbody>
-
                         @foreach($sucursales as $sucursal)
-
                         <tr>
-
                             <td>
-
-                            <p style="display:none">
-                                {{ $sucursal->nombre}}
-                            </p>
-
+                                <p style="display: none">
+                                    {{ $sucursal->nombre}}
+                                </p>
                                 <form>
-
                                     <input type="text" class="form-control" required name="nombre" value="{{ $sucursal->nombre }}">
-
                                 </form>
-
                             </td>
-
                         </tr>
-
-
-
                         @endforeach
                     </tbody>
-
                 </table>
-
             </div>
-
         </div>
-
     </section>
+
 </div>
-
-
 
 @endsection

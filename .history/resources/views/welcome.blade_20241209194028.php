@@ -108,19 +108,14 @@
 
     @php
 
-    $exp = explode('/', $_SERVER["REQUEST_URI"]);
+$exp = explode('/', $_SERVER["REQUEST_URI"]);
 
-    @endphp
+@endphp
 
     <script type="text/javascript">
         $(".table").DataTable({
 
-            @if($exp[3]=='Suscursales')
-
-            echo 'order: [[0,"asc"]],';
-
-            @endif
-            
+            "ordering": false,
 
             "language": {
 
@@ -146,16 +141,19 @@
             }
 
         });
+
     </script>
 
-
+   
 
     <script type="text/javascript">
+        
         @if($exp[3] == 'Editar-Usuario')
 
         $('#EditarUsuario').modal('toggle');
 
         @endif
+
     </script>
 </body>
 

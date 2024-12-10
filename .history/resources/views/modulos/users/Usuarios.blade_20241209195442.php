@@ -20,7 +20,7 @@
 
             <div class="box-body">
 
-                <table class="table table-bordered table-striped table-hover dt-responsive">
+                <table class="table table-bordered table-striped table-hover dt">
 
                     <thead>
                         <tr>
