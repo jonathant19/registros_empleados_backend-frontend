@@ -54,6 +54,6 @@ class SucursalesController extends Controller
         $Sucursal->estado = $estado;
         $Sucursal->save();
 
-        return redirect('Sucursales');
+        return redirect('su')
     }
 }

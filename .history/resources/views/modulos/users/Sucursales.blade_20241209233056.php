@@ -53,9 +53,9 @@
 
                             <td>
 
-                                <p style="display:none">
-                                    {{ $sucursal->nombre}}
-                                </p>
+                            <p style="display:none">
+                                {{ $sucursal->nombre}}
+                            </p>
 
                                 <form method="post" action="{{ url('Actualizar-Sucursal/'.$sucursal->id) }}">
                                     @csrf
@@ -75,61 +75,61 @@
 
                         </tr>
 
-                        @endif
+                           @endif
 
                         @endforeach
                     </tbody>
 
                 </table>
-                
-                <hr>
-                <h2>Sucursales Deshabilitadas</h2>
+
                 <table class="table table-bordered table-striped table-hover dt-responsice">
 
-                    <thead>
+<thead>
 
-                        <tr>
-                            <th>Sucursal</th>
-                        </tr>
+    <tr>
+        <th>Sucursal</th>
+    </tr>
 
-                    </thead>
+</thead>
 
-                    <tbody>
+<tbody>
 
-                        @foreach($sucursales as $sucursal)
+    @foreach($sucursales as $sucursal)
 
-                        @if($sucursal->estado == 0)
+    @if($sucursal->estado == 1)
 
-                        <tr>
+    <tr>
 
-                            <td>
+        <td>
 
-                                <p style="display:none">
-                                    {{ $sucursal->nombre}}
-                                </p>
+        <p style="display:none">
+            {{ $sucursal->nombre}}
+        </p>
 
-                                <form method="post" action="{{ url('Actualizar-Sucursal/'.$sucursal->id) }}">
-                                    @csrf
-                                    @method('put')
+            <form method="post" action="{{ url('Actualizar-Sucursal/'.$sucursal->id) }}">
+                @csrf
+                @method('put')
 
-                                    <input type="text" class="form-control" required name="nombre" value="{{ $sucursal->nombre }}">
+                <input type="text" class="form-control" required name="nombre" value="{{ $sucursal->nombre }}">
 
-                                    <a href="{{url('Cambiar-Estado-Sucursal/1/'.$sucursal->id)}}">
-                                        <button class="btn btn-warning" type="button">Habilitar</button>
-                                    </a>
+                <button class="btn btn-success" type="submit">Guardar</button>
 
-                                </form>
+                <a href="{{url('Cambiar-Estado-Sucursal/0/'.$sucursal->id)}}">
+                    <button class="btn btn-danger" type="button">Deshabilitar</button>
+                </a>
 
-                            </td>
+            </form>
 
-                        </tr>
+        </td>
 
-                        @endif
+    </tr>
 
-                        @endforeach
-                    </tbody>
+       @endif
 
-                </table>
+    @endforeach
+</tbody>
+
+</table>
 
             </div>
 

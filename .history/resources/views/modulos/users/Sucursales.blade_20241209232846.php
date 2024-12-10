@@ -47,15 +47,15 @@
 
                         @foreach($sucursales as $sucursal)
 
-                        @if($sucursal->estado == 1)
+                        @if($sucursal->estado ==)
 
                         <tr>
 
                             <td>
 
-                                <p style="display:none">
-                                    {{ $sucursal->nombre}}
-                                </p>
+                            <p style="display:none">
+                                {{ $sucursal->nombre}}
+                            </p>
 
                                 <form method="post" action="{{ url('Actualizar-Sucursal/'.$sucursal->id) }}">
                                     @csrf
@@ -75,56 +75,7 @@
 
                         </tr>
 
-                        @endif
 
-                        @endforeach
-                    </tbody>
-
-                </table>
-                
-                <hr>
-                <h2>Sucursales Deshabilitadas</h2>
-                <table class="table table-bordered table-striped table-hover dt-responsice">
-
-                    <thead>
-
-                        <tr>
-                            <th>Sucursal</th>
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        @foreach($sucursales as $sucursal)
-
-                        @if($sucursal->estado == 0)
-
-                        <tr>
-
-                            <td>
-
-                                <p style="display:none">
-                                    {{ $sucursal->nombre}}
-                                </p>
-
-                                <form method="post" action="{{ url('Actualizar-Sucursal/'.$sucursal->id) }}">
-                                    @csrf
-                                    @method('put')
-
-                                    <input type="text" class="form-control" required name="nombre" value="{{ $sucursal->nombre }}">
-
-                                    <a href="{{url('Cambiar-Estado-Sucursal/1/'.$sucursal->id)}}">
-                                        <button class="btn btn-warning" type="button">Habilitar</button>
-                                    </a>
-
-                                </form>
-
-                            </td>
-
-                        </tr>
-
-                        @endif
 
                         @endforeach
                     </tbody>

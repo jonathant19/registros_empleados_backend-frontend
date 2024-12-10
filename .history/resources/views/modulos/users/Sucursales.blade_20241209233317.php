@@ -114,8 +114,10 @@
 
                                     <input type="text" class="form-control" required name="nombre" value="{{ $sucursal->nombre }}">
 
-                                    <a href="{{url('Cambiar-Estado-Sucursal/1/'.$sucursal->id)}}">
-                                        <button class="btn btn-warning" type="button">Habilitar</button>
+                                    <button class="btn btn-success" type="submit">Guardar</button>
+
+                                    <a href="{{url('Cambiar-Estado-Sucursal/0/'.$sucursal->id)}}">
+                                        <button class="btn btn-danger" type="button">Deshabilitar</button>
                                     </a>
 
                                 </form>

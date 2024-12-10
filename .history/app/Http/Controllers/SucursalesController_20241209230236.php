@@ -47,13 +47,10 @@ class SucursalesController extends Controller
         return redirect('Sucursales');
     }
 
-   
+    
+     */
     public function CambiarEstadoSucursal($estado, $id_sucursal)
     {
-        $Sucursal = Sucursales::find($id_sucursal);
-        $Sucursal->estado = $estado;
-        $Sucursal->save();
-
-        return redirect('Sucursales');
+        //
     }
 }
