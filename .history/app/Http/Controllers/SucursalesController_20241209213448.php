@@ -15,7 +15,7 @@ class SucursalesController extends Controller
     public function index()
     {
           if(auth()->user()->rol != 'Administrador'){
-            return redirect('Inicio');
+            return
           }
     
         $sucursales = Sucursales::all();
@@ -35,16 +35,10 @@ class SucursalesController extends Controller
         ]);
 
           return redirect('Sucursales');
-    }
+
     public function ActualizarSucursal(Request $request, $id_sucursal)
     {
-        
-        $Sucursal = Sucursales::find($id_sucursal);
-
-        $Sucursal->nombre = $request->nombre;
-
-        $Sucursal->save();
-        return redirect('Sucursales');
+        //
     }
 
     /**

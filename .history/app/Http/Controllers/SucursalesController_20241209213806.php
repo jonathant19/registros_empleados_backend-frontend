@@ -39,12 +39,7 @@ class SucursalesController extends Controller
     public function ActualizarSucursal(Request $request, $id_sucursal)
     {
         
-        $Sucursal = Sucursales::find($id_sucursal);
-
-        $Sucursal->nombre = $request->nombre;
-
-        $Sucursal->save();
-        return redirect('Sucursales');
+        $Sucursal = Sucursales::find($id)
     }
 
     /**

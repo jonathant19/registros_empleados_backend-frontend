@@ -14,10 +14,6 @@ class SucursalesController extends Controller
     }
     public function index()
     {
-          if(auth()->user()->rol != 'Administrador'){
-            return redirect('Inicio');
-          }
-    
         $sucursales = Sucursales::all();
 
         return view('modulos.users.Sucursales', compact('sucursales'));
@@ -35,16 +31,10 @@ class SucursalesController extends Controller
         ]);
 
           return redirect('Sucursales');
-    }
-    public function ActualizarSucursal(Request $request, $id_sucursal)
+
+    public function ActualizarSucursal(Request $request, Sucursales $sucursales)
     {
-        
-        $Sucursal = Sucursales::find($id_sucursal);
-
-        $Sucursal->nombre = $request->nombre;
-
-        $Sucursal->save();
-        return redirect('Sucursales');
+        //
     }
 
     /**

@@ -40,11 +40,6 @@ class SucursalesController extends Controller
     {
         
         $Sucursal = Sucursales::find($id_sucursal);
-
-        $Sucursal->nombre = $request->nombre;
-
-        $Sucursal->save();
-        return redirect('Sucursales');
     }
 
     /**

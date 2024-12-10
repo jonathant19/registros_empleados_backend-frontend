@@ -44,7 +44,6 @@ class SucursalesController extends Controller
         $Sucursal->nombre = $request->nombre;
 
         $Sucursal->save();
-        return redirect('Sucursales');
     }
 
     /**
